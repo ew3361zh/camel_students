@@ -134,15 +134,18 @@ class TestStudentLists(TestCase):
     ## TODO write a test for your new is_class_full method when the class is full. 
     # use assertTrue.
     
-    def test_class_size_full_and_equals_max_students(self):
+    def test_class_size_full_and_equals_max_students_returns_true(self):
         test_class = ClassList(2)
         test_class.add_student('Test Student 1')
         test_class.add_student('Test Student 2')
         self.assertTrue(test_class.is_class_full(max_students=2))
 
-
     ## TODO write a test for your new is_class_full method for when is empty, 
     # and when it is not full. Use assertFalse.
+
+    def test_class_size_not_full_and_does_not_match_max_students_returns_false(self):
+        test_class = ClassList(2)
+        self.assertFalse(test_class.is_class_full(max_students=2))
 
 if __name__ == '__main__':
     unittest.main()
