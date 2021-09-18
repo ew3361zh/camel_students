@@ -27,6 +27,18 @@ class TestCamelCase(unittest.TestCase):
     def test_camelcase_blank(self):
 
         self.assertEqual('', camelcase_wk4.camel_case_it(''))
+
+    def test_camel_case_international(self):
+
+        input_and_expected_outputs = {
+            '你叫 什么 名字': '你叫什么名字',
+            'Write a résumé': 'writeARésumé',
+            'Über die Brücke': 'überDieBrücke',
+            'Fahre über die Brücke': 'fahreÜberDieBrücke',
+        }
+
+        for input_val, output_val in input_and_expected_outputs.items():
+            self.assertEqual(output_val, camelcase_wk4.camel_case_it(input_val))
     
 
 if __name__ == '__main__':
