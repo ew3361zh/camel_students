@@ -46,7 +46,7 @@ class TestStudentLists(TestCase):
         with self.assertRaises(StudentError):
             test_class.add_student('Test Student')
 
-    ## test that adds and removes a student, 
+    ## DONE test that adds and removes a student, 
     # and asserts the student is removed. Use assertNotIn
     
     def test_add_remove_student_ensure_removed(self):
