@@ -146,6 +146,8 @@ class TestStudentLists(TestCase):
     def test_class_size_not_full_and_does_not_match_max_students_returns_false(self):
         test_class = ClassList(2)
         self.assertFalse(test_class.is_class_full(max_students=2))
+        test_class.add_student('Test Student 1')
+        self.assertFalse(test_class.is_class_full(max_students=2))
 
 if __name__ == '__main__':
     unittest.main()
