@@ -95,10 +95,16 @@ class TestStudentLists(TestCase):
         self.assertFalse(test_class.is_enrolled('Snoop Dogg'))
 
 
-    ## TODO write a test that adds some example students to a test class,
+    ## DONE write a test that adds some example students to a test class,
     ## then, call is_enrolled for a student who is not enrolled. 
     # Use assertFalse to verify is_enrolled returns False.
-    #11 TODO above
+    
+    #11
+    def test_is_enrolled_fails_if_student_doesnt_exist_class_with_students(self):
+        test_class = ClassList(3)
+        test_class.add_student('Joni Mitchell')
+        test_class.add_student('Stevie Wonder')
+        self.assertFalse(test_class.is_enrolled('Mark Wahlberg'))
 
     #12
     def test_string_with_students_enrolled(self):
