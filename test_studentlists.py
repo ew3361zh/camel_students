@@ -31,8 +31,7 @@ class TestStudentLists(TestCase):
     #3
     def test_can_create_class_with_positive_students(self):
         test_class = ClassList(4)
-        # should we add anything here/improve this test?
-        # self.assert
+        self.assertTrue(test_class.max_students > 0)
 
     #4
     def test_add_student_check_student_in_list(self):
