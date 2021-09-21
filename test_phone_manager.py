@@ -32,11 +32,19 @@ class TestPhoneManager(unittest.TestCase):
         with self.assertRaises(PhoneError):
             testAssignmentMgr.add_phone(testPhone2)
 
-    # #3
-    # def test_create_and_add_new_employee(self):
-    #     # TODO write this test and then remove the self.fail() statement
-    #     # Add some employees and verify they are present in the PhoneAssignments.employees list
-    #     self.fail()
+    #3
+    def test_create_and_add_new_employee(self):
+        # TODO write this test and then remove the self.fail() statement
+        test_employee1 = Employee(1, 'Jaime')
+        test_employee2 = Employee(2, 'Jessica')
+
+        testEmployees = [ test_employee1, test_employee2 ]
+
+        testAssignmentMgr = PhoneAssignments()
+        testAssignmentMgr.add_employee(test_employee1)
+        testAssignmentMgr.add_employee(test_employee2)
+        # Add some employees and verify they are present in the PhoneAssignments.employees list
+        self.assertCountEqual(testEmployees, testAssignmentMgr.employees)
 
     # #4
     # def test_create_and_add_employee_with_duplicate_id(self):
