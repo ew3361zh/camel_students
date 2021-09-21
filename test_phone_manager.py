@@ -3,26 +3,26 @@ from phone_manager import Phone, Employee, PhoneAssignments, PhoneError
 
 class TestPhoneManager(unittest.TestCase):
 
-    # #1
-    # def test_create_and_add_new_phone(self):
+    #1
+    def test_create_and_add_new_phone(self):
 
-    #     testPhone1 = Phone(1, 'Apple', 'iPhone 6')
-    #     testPhone2 = Phone(2, 'Apple', 'iPhone 5')
+        testPhone1 = Phone(1, 'Apple', 'iPhone 6')
+        testPhone2 = Phone(2, 'Apple', 'iPhone 5')
 
-    #     testPhones = [ testPhone1, testPhone2 ]
+        testPhones = [ testPhone1, testPhone2 ]
 
-    #     testAssignmentMgr = PhoneAssignments()
-    #     testAssignmentMgr.add_phone(testPhone1)
-    #     testAssignmentMgr.add_phone(testPhone2)
+        testAssignmentMgr = PhoneAssignments()
+        testAssignmentMgr.add_phone(testPhone1)
+        testAssignmentMgr.add_phone(testPhone2)
 
-    #     # assertCountEqual checks if two lists have the same items, in any order.
-    #     # (Despite what the name implies)
-    #     self.assertCountEqual(testPhones, testAssignmentMgr.phones)
+        # assertCountEqual checks if two lists have the same items, in any order.
+        # (Despite what the name implies)
+        self.assertCountEqual(testPhones, testAssignmentMgr.phones)
 
     #2
     def test_create_and_add_phone_with_duplicate_id(self):
-        # TODO add a phone, add another phone with the same id, and verify an PhoneError exception is thrown
-        # TODO you'll need to modify PhoneAssignments.add_phone() to make this test pass
+        # add a phone, add another phone with the same id, and verify an PhoneError exception is thrown
+        # you'll need to modify PhoneAssignments.add_phone() to make this test pass
         testPhone1 = Phone(1, 'Apple', 'iPhone 6')
         testPhone2 = Phone(1, 'Apple', 'iPhone 5')
 

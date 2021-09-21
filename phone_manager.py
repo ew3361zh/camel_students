@@ -54,12 +54,14 @@ class PhoneAssignments():
 
     def add_phone(self, phone):
         # DONE raise exception if two phones with same ID are added
+        phone_ids = []
         if len(self.phones) > 0:
             for ph in self.phones:
-                if ph.id == phone.id:
-                    raise PhoneError(f'Phone ID {phone.id} already added, can\'t add twice')
-                else:
-                    self.phones.append(phone)
+                phone_ids.append(ph.id)
+            if phone.id in phone_ids:
+                raise PhoneError(f'Phone ID {phone.id} already added, can\'t add twice')
+            else:
+                self.phones.append(phone)
         else:
             self.phones.append(phone)
 
