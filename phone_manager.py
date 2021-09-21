@@ -51,7 +51,7 @@ class PhoneAssignments():
             for emp in self.employees:
                 employee_ids.append(emp.id)
             if employee.id in employee_ids:
-                raise PhoneError(f'Employee {employee} already added, can\'t add twice')
+                raise PhoneError(f'Employee ID {employee.id} already added, can\'t add twice')
             else:
                 self.employees.append(employee)
         else:
