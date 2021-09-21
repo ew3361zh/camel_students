@@ -46,15 +46,22 @@ class PhoneAssignments():
 
     def add_employee(self, employee):
         # raise exception if two employees with same ID are added
-        if employee in self.employees:
+        if self.employee[id] in self.employees:
             raise PhoneError(f'Employee {employee} already added, can\'t add twice')
         else:
             self.employees.append(employee)
 
 
     def add_phone(self, phone):
-        # TODO raise exception if two phones with same ID are added
-        self.phones.append(phone)
+        # DONE raise exception if two phones with same ID are added
+        if len(self.phones) > 0:
+            for ph in self.phones:
+                if ph.id == phone.id:
+                    raise PhoneError(f'Phone ID {phone.id} already added, can\'t add twice')
+                else:
+                    self.phones.append(phone)
+        else:
+            self.phones.append(phone)
 
 
     def assign(self, phone_id, employee):
